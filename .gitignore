@@ -4,3 +4,6 @@ debug
 log/
 .log
 .DS_Store
+.exe
+*.exe
+
