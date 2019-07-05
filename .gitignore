@@ -6,4 +6,4 @@ log/
 .DS_Store
 .exe
 *.exe
-
+*.exe*
