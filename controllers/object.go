@@ -1,7 +1,7 @@
 package controllers
 
 import (
-	"github.com/yijie8/tmcapi/tmcapi/models"
+	"github.com/yijie8/tmcapi/models"
 	"encoding/json"
 
 	"github.com/astaxie/beego"

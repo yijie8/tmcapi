@@ -1,7 +1,7 @@
 package main
 
 import (
-	_ "github.com/yijie8/tmcapi/tmcapi/routers"
+	_ "github.com/yijie8/tmcapi/routers"
 
 	"github.com/astaxie/beego"
 )

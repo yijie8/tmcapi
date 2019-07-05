@@ -8,7 +8,7 @@
 package routers
 
 import (
-	"github.com/yijie8/tmcapi/tmcapi/controllers"
+	"github.com/yijie8/tmcapi/controllers"
 
 	"github.com/astaxie/beego"
 )
