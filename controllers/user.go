@@ -1,8 +1,8 @@
 package controllers
 
 import (
-	"github.com/yijie8/tmcapi/models"
 	"encoding/json"
+	"github.com/yijie8/tmcapi/models"
 
 	"github.com/astaxie/beego"
 )
@@ -20,7 +20,7 @@ type UserController struct {
 // @router / [post]
 func (u *UserController) Post() {
 	var user models.User
-	json.Unmarshal(u.Ctx.Input.RequestBody, &user)
+	_ = json.Unmarshal(u.Ctx.Input.RequestBody, &user)
 	uid := models.AddUser(user)
 	u.Data["json"] = map[string]string{"uid": uid}
 	u.ServeJSON()
@@ -66,7 +66,7 @@ func (u *UserController) Put() {
 	uid := u.GetString(":uid")
 	if uid != "" {
 		var user models.User
-		json.Unmarshal(u.Ctx.Input.RequestBody, &user)
+		_ = json.Unmarshal(u.Ctx.Input.RequestBody, &user)
 		uu, err := models.UpdateUser(uid, &user)
 		if err != nil {
 			u.Data["json"] = err.Error()
@@ -116,4 +116,3 @@ func (u *UserController) Logout() {
 	u.Data["json"] = "logout success"
 	u.ServeJSON()
 }
-

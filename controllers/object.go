@@ -1,8 +1,8 @@
 package controllers
 
 import (
-	"github.com/yijie8/tmcapi/models"
 	"encoding/json"
+	"github.com/yijie8/tmcapi/models"
 
 	"github.com/astaxie/beego"
 )
@@ -20,7 +20,7 @@ type ObjectController struct {
 // @router / [post]
 func (o *ObjectController) Post() {
 	var ob models.Object
-	json.Unmarshal(o.Ctx.Input.RequestBody, &ob)
+	_ = json.Unmarshal(o.Ctx.Input.RequestBody, &ob)
 	objectid := models.AddOne(ob)
 	o.Data["json"] = map[string]string{"ObjectId": objectid}
 	o.ServeJSON()
@@ -66,7 +66,7 @@ func (o *ObjectController) GetAll() {
 func (o *ObjectController) Put() {
 	objectId := o.Ctx.Input.Param(":objectId")
 	var ob models.Object
-	json.Unmarshal(o.Ctx.Input.RequestBody, &ob)
+	_ = json.Unmarshal(o.Ctx.Input.RequestBody, &ob)
 
 	err := models.Update(objectId, ob.Score)
 	if err != nil {
@@ -89,4 +89,3 @@ func (o *ObjectController) Delete() {
 	o.Data["json"] = "delete success!"
 	o.ServeJSON()
 }
-
