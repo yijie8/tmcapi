@@ -64,4 +64,8 @@ func init() {
 		),
 	)
 	beego.AddNamespace(ns)
+
+	// WebSocket.
+	beego.Router("/ws", &controllers.WebSocketController{})
+	//beego.Router("/ws/join", &controllers.WebSocketController{}, "get:Join")
 }
